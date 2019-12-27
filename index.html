@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>MLInNet</title>
+
+    <link rel="icon" type="image/icon" href="img/favicon.png">
+
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/material.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-background-image="img/background.jpeg">
+          <h1 style="color: white">Machine Learning in Networking</h1>
+          <h3 style="color: white">Parham Alvani</h3>
+          <h5><a href="https://1995parham.github.io" >@1995parham</a></h5>
+        </section>
+        <section>
+          <div class="toc"></div>
+        </section>
+        <section>
+          <div class="toc" data-selected="0"></div>
+        </section>
+        <section>
+          <h3>Introduction</h3>
+          <ul>
+            <li>Networks needs more intelligence to deploy</li>
+            <li>Traditional networks are <span class="material-italic">distributed</span></li>
+            <li>Each node, such as router or switch, can only view and act over a <span class="material-italic">small partion</span> of the system.</li>
+            <li>Learning from the nodes that have only a small partial view of the complete system to perform contol beyond the local domain is <span class="material-bold">very complex</span></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Introduction</h3>
+          <ul>
+            <li>SDN decouples the control plane and the data plane</li>
+            <li>The network resources in SDN are managed by a logically centralized controller</li>
+          </ul>
+        </section>
+        <section>
+          <h3>Machine Learning in SDN</h3>
+          <ul>
+            <li>Traffic Classification</li>
+            <li>Routing Optimization</li>
+            <li>QoS/QoE Prediction</li>
+            <li>Resource Management</li>
+            <li>Security</li>
+          </ul>
+        </section>
+        <section>
+          <div class="toc" data-selected="1"></div>
+        </section>
+        <section>
+          <ul>
+            <li>Traffic classificiation is an important network function, which provides a way to perform fine-grained network management by identifying different flow types.</li>
+            <li>In general <span class="material-bold">supervised and semi-supervised</span> learning algorithms can be used</li>
+            <li>Deep Packet Inspection (DPI) is a common method to label traffic flows, but it incurs high computational cost when a large number of traffic flows are labeled</li>
+          </ul>
+        </section>
+        <section>
+          <div class="toc" data-selected="2"></div>
+        </section>
+        <section>
+          <ul>
+            <li>Routing is a fundamental network function</li>
+            <li>Supervised Learning for obtaining the optimal huristic-like routing solution</li>
+            <li>RL algorithms without labeled taining datasets can have flexible optimization targets</li>
+          </ul>
+        </section>
+        <section>
+          <div class="toc" data-selected="3"></div>
+        </section>
+        <section>
+        </section>
+        <section>
+          <div class="toc" data-selected="4"></div>
+        </section>
+        <section>
+          <div class="toc" data-selected="5"></div>
+        </section>
+        <section data-background-image="img/thank-you.jpeg">
+        </section>
+      </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        history: true,
+        controls: true,
+        slideNumber: true,
+
+        margin: 0.3,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+          {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            condition: function() {
+              if (typeof hljs !== undefined) {
+                return true;
+              } else {
+                return false;
+              }
+            },
+            callback: function() { hljs.initHighlightingOnLoad(); }
+          },
+          {
+            src: 'plugin/toc.js',
+            async: true,
+            condition: function() {
+              if (typeof toc !== undefined) {
+                return true;
+              } else {
+                return false;
+              }
+            },
+            callback: function() { toc.initToCOnLoad([
+              "Introduction",
+              "Traffic Classification",
+              "Routing Optimization",
+              "QoS/QoE Prediction",
+              "Resource Management",
+              "Security"
+            ]); }
+          }
+        ]
+      });
+    </script>
+
+    <!-- logos and advertising -->
+    <a href="https://github.com/Bambil/MLInNet" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/forkme_right_orange.png" alt="Fork me on GitHub"></a>
+  </body>
+</html>
